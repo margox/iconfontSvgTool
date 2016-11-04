@@ -1,0 +1,28 @@
+.btn-generate-draggable-img{
+  position: fixed;
+  z-index: 999999;
+  right: 30px;
+  bottom: 30px;
+  width: 150px;
+  height: 50px;
+  color: #999;
+  font-size: 16px;  
+  background-color: #fff;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+.btn-generate-draggable-img:hover{
+  background-color: #eee;
+}
+.svg-img-output{
+  display: block;
+  width: 165px;
+  height: 165px;
+  padding: 10px;
+  background-color: #fff;
+}
+.info-tags-container .tag{
+  display: none !important;
+}

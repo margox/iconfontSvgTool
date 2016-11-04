@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "author": "Margox",
+  "name": "Iconfont SVG 拖出工具",
+  "description": "允许直接将iconfont.cn上面的SVG图标拖出到Skecth等工具里面",
+  "version": "1.0.2",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.iconfont.cn/*"],
+      "css": ["styles.css"],
+      "js": ["scripts.js"]
+    }
+  ],
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
