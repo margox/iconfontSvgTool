@@ -1,3 +1,4 @@
 ##iconfontSvgTool
 iconfont.cn辅助工具，自动在iconfont.cn的图标下载对话框中生成可拖拽的svg图片，可直接拖拽到ai或sketch等应用中
+
 可以直接在chrome浏览器扩展管理页点击“加载已解压的扩展程序”并选择本项目的src目录，也可以直接将dist目录下面的crx文件拖入到chrome浏览器的扩展管理页
