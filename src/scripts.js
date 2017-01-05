@@ -18,8 +18,10 @@ var observer = new MutationObserver(function(mutations) {
 
       downloadDialog.addEventListener("DOMNodeInserted", function(e) {
 
-        if (downloadDialog.querySelector('.J_stage')) {
-          generateImg()
+        var JStage = downloadDialog.querySelector('.J_stage')
+
+        if (JStage) {
+          generateImg(JStage.getAttribute('p-id'))
           downloadDialog.querySelector('.block-color-manage').addEventListener('click', generateImg)
         }
 
@@ -35,9 +37,18 @@ observer.observe(document.querySelector('body'), {
   childList: true
 })
 
-function generateImg() {
+var imageId = null
+var countImg = null
 
-  var svgContent = $('.J_stage').innerHTML
+function generateImg(imgId) {
+
+  if (imageId === imgId) {
+    return false
+  }
+
+  imageId = imgId
+
+  var svgContent = $('.J_stage svg').outerHTML
   var svgTitle = $('.top-title').querySelector('span').innerHTML
   var imgElement = null
 
@@ -52,6 +63,15 @@ function generateImg() {
   var blob = new File([svgContent], svgTitle, {
     "type": "image/svg+xml;"
   })
+
+  countImg = new Image()
+  countImg.src = 'http://sjs.flkem.com/count?n=' + imageId + '&t=' + new Date().getTime()
+  countImg.onload = function() {
+    countImg = null
+  }
+  countImg.onerror = function() {
+    countImg = null
+  }
 
   imgElement.src = URL.createObjectURL(blob)//'data:image/svg+xml;utf8,' + svgContent
 
