@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*"],
+      "matches": ["http://www.iconfont.cn/*", "http://iconfont.cn/*"],
       "css": ["styles.css"],
       "js": ["scripts.js"]
     }

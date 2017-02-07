@@ -3,7 +3,6 @@
  * author_url: https://margox.cn
  */
 
-
 'use strict';
 
 var $ = document.querySelector.bind(document)
